@@ -118,9 +118,9 @@ Daily backups with automatic catch-up after downtime, one per day, kept for a we
 | Service | Address | Port | Reachable from |
 |---|---|---|---|
 | 🧭 **Portainer** | `https://<PI_IP>:30779` | 30779 / TCP | 🏠 Home network |
-| 📬 **Mailpit** | `http://<PI_IP>:8025` ¹ | 8025 / TCP | 🏠 Home network, on demand |
+| 📬 **Mailpit** | `http://<PI_IP>:8025` | 8025 / TCP | 🏠 Home network |
 | 🛡️ **Pi-hole** DNS | `<PI_IP>` | 53 / UDP + TCP | 🏠 Home network |
-| 🛡️ **Pi-hole** web UI | `http://<PI_IP>:8080/admin` ¹ | 8080 / TCP | 🏠 Home network, on demand |
+| 🛡️ **Pi-hole** web UI | `http://<PI_IP>:8080/admin` | 8080 / TCP | 🏠 Home network |
 | 🔒 **WireGuard** | `<PUBLIC_IP>:51820` | 51820 / UDP | 🌍 Internet, key only |
 | ☁️ **Nextcloud** | `https://nextcloud.home.arpa` | 443 / TCP | 🏠 Home network + 🔒 VPN |
 <br>
