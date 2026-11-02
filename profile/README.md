@@ -4,6 +4,7 @@
 [![K3s](https://img.shields.io/badge/K3s-FFC61C?style=for-the-badge&logo=k3s&logoColor=black)](https://k3s.io)&nbsp;&nbsp;
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/NekkoRaspberry/ARC-SelfHosted-K3S)&nbsp;&nbsp;
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://github.com/NekkoRaspberry/Postgres-K3s)<br>
+[![Mailpit](https://img.shields.io/badge/Mailpit-2C3E50?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yIDVoMjB2MTRIMnoiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yIDVsMTAgOCAxMC04IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4%3D)](https://github.com/NekkoRaspberry/Mailpit-K3s)&nbsp;&nbsp;
 [![Pi-hole](https://img.shields.io/badge/Pi--hole-96060C?style=for-the-badge&logo=pihole&logoColor=white)](https://github.com/NekkoRaspberry/Pihole-K3s)&nbsp;&nbsp;
 [![WireGuard](https://img.shields.io/badge/WireGuard-88171A?style=for-the-badge&logo=wireguard&logoColor=white)](https://github.com/NekkoRaspberry/Wireguard-K3s)&nbsp;&nbsp;
 [![Nextcloud](https://img.shields.io/badge/Nextcloud-0082C9?style=for-the-badge&logo=nextcloud&logoColor=white)](https://github.com/NekkoRaspberry/Nextcloud-K3s)
@@ -103,12 +104,25 @@ Daily backups with automatic catch-up after downtime, one per day, kept for a we
 - [x] Raspberry Pi OS Lite 64-bit
 - [x] K3s, Helm and Portainer
 - [x] Self-hosted GitHub Actions runners (ARC)
-- [x] Shared PostgreSQL with per-app databases and backups
-- [x] Shared Mailpit with per-app email logins
+- [x] 🐘 Shared PostgreSQL with per-app databases and backups
+- [x] 📬 Shared Mailpit with per-app email logins
 - [x] 🛡️ Pi-hole: block ads for the whole home network
 - [x] 🔒 WireGuard: secure access from anywhere
 - [x] ☁️ Nextcloud: a private cloud for files and photos
 - [ ] 🚀 Build images and deploy apps automatically from GitHub
+
+## 🔌 Connect
+
+| Service | Address | Port | Reachable from |
+|---|---|---|---|
+| 🧭 **Portainer** | `https://<PI_IP>:30779` | 30779 / TCP | 🏠 Home network |
+| 📬 **Mailpit** | `http://localhost:8025` ¹ | 8025 / TCP | ☸️ Cluster only |
+| 🛡️ **Pi-hole** DNS | `<PI_IP>` | 53 / UDP + TCP | 🏠 Home network |
+| 🛡️ **Pi-hole** web UI | `http://localhost:8080/admin` ¹ | 80 / TCP | ☸️ Cluster only |
+| 🔒 **WireGuard** | `<PUBLIC_IP>:51820` | 51820 / UDP | 🌍 Internet, key only |
+| ☁️ **Nextcloud** | `https://nextcloud.home.arpa` | 443 / TCP | 🏠 Home network + 🔒 VPN |
+
+`<PI_IP>` is the Pi's address on the home network, `<PUBLIC_IP>` the home's internet address.<br>
 
 <details>
 <summary><b>🔍 Under the hood</b></summary>
