@@ -113,16 +113,17 @@ Daily backups with automatic catch-up after downtime, one per day, kept for a we
 
 ## 🔌 Connect
 
+`<PI_IP>` is the Pi's address on the home network, `<PUBLIC_IP>` the home's internet address.
+
 | Service | Address | Port | Reachable from |
 |---|---|---|---|
 | 🧭 **Portainer** | `https://<PI_IP>:30779` | 30779 / TCP | 🏠 Home network |
-| 📬 **Mailpit** | `http://localhost:8025` ¹ | 8025 / TCP | ☸️ Cluster only |
+| 📬 **Mailpit** | `http://<PI_IP>:8025` ¹ | 8025 / TCP | 🏠 Home network, on demand |
 | 🛡️ **Pi-hole** DNS | `<PI_IP>` | 53 / UDP + TCP | 🏠 Home network |
-| 🛡️ **Pi-hole** web UI | `http://localhost:8080/admin` ¹ | 80 / TCP | ☸️ Cluster only |
+| 🛡️ **Pi-hole** web UI | `http://<PI_IP>:8080/admin` ¹ | 8080 / TCP | 🏠 Home network, on demand |
 | 🔒 **WireGuard** | `<PUBLIC_IP>:51820` | 51820 / UDP | 🌍 Internet, key only |
 | ☁️ **Nextcloud** | `https://nextcloud.home.arpa` | 443 / TCP | 🏠 Home network + 🔒 VPN |
-
-`<PI_IP>` is the Pi's address on the home network, `<PUBLIC_IP>` the home's internet address.<br>
+<br>
 
 <details>
 <summary><b>🔍 Under the hood</b></summary>
