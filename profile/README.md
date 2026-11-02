@@ -2,20 +2,17 @@
 
 # 🍓 NekkoRaspberry
 
+<br>
+
 **A home lab that fits in your hand.**<br>
 One Raspberry Pi 4, running a small Kubernetes cluster, its own CI/CD runners and shared services for every app.
 
 <br>
 
 ![Raspberry Pi 4](https://img.shields.io/badge/Raspberry_Pi_4-8_GB-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
-![Debian 13](https://img.shields.io/badge/Debian_13-Trixie_·_ARM64-A81D33?style=for-the-badge&logo=debian&logoColor=white)
 ![K3s](https://img.shields.io/badge/K3s-Kubernetes-FFC61C?style=for-the-badge&logo=k3s&logoColor=black)
-
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Self--hosted-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-Packages-0F1689?style=flat-square&logo=helm&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Mailpit](https://img.shields.io/badge/Mailpit-Email_catcher-0A7E8C?style=flat-square)
-![Portainer](https://img.shields.io/badge/Portainer-Dashboard-13BEF9?style=flat-square&logo=portainer&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Self--hosted-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
 </div>
 
@@ -30,7 +27,7 @@ One Raspberry Pi 4, running a small Kubernetes cluster, its own CI/CD runners an
 | | |
 |---|---|
 | 🍓 **Hardware** | Raspberry Pi 4 Model B, 8 GB RAM |
-| 💽 **Storage** | 128 GB SD card *(SSD planned)* |
+| 💽 **Storage** | 128 GB |
 | 🐧 **System** | Raspberry Pi OS Lite 64-bit (Debian 13), no desktop |
 | ☸️ **Platform** | K3s, a lightweight Kubernetes |
 | 🔌 **Access** | Headless, managed remotely from VS Code |
@@ -70,7 +67,7 @@ flowchart LR
 <tr>
 <td width="50%" valign="top">
 
-### 🪶 Keep it light
+### 🍃 Keep it light
 Small images, memory limits on every service, and nothing running when it isn't needed. CI runners only exist while a job runs.
 
 ### 🔐 Security first
@@ -83,7 +80,7 @@ Services are reachable only inside the cluster. Passwords are generated at rando
 Every project ships tests for health, scripts, deployment and cleanup, and the tests check that they leave nothing behind.
 
 ### 💾 Protect the data
-Daily backups with automatic catch-up after downtime, one per day, kept for a week. Fewer disk writes to spare the SD card.
+Daily backups with automatic catch-up after downtime, one per day, kept for a week. Fewer disk writes to make the storage last longer.
 
 </td>
 </tr>
@@ -96,7 +93,6 @@ Daily backups with automatic catch-up after downtime, one per day, kept for a we
 - [x] Self-hosted GitHub Actions runners (ARC)
 - [x] Shared PostgreSQL with per-app databases and backups
 - [x] Shared Mailpit with per-app email logins
-- [ ] 💽 Move data and backups to a USB SSD
 - [ ] 🛡️ Pi-hole: block ads for the whole home network
 - [ ] 🔒 WireGuard: secure access from anywhere
 - [ ] ☁️ Nextcloud: a private cloud for files and photos
