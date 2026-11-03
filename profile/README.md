@@ -118,12 +118,13 @@ Daily backups with automatic catch-up after downtime, one per day, kept for a we
 | Service | Address | Port | Reachable from |
 |---|---|---|---|
 | 🧭 **Portainer** | `https://<PI_IP>:30779` | 30779 / TCP | 🏠 Home network |
-| 📬 **Mailpit** | `http://<PI_IP>:8025` | 8025 / TCP | 🏠 Home network |
+| 📬 **Mailpit** | `https://mailpit.home.arpa` | 443 / TCP | 🏠 Home network |
 | 🛡️ **Pi-hole** DNS | `<PI_IP>` | 53 / UDP + TCP | 🏠 Home network |
-| 🛡️ **Pi-hole** web UI | `http://<PI_IP>:8080/admin` | 8080 / TCP | 🏠 Home network |
+| 🛡️ **Pi-hole** web UI | `https://pihole.home.arpa/admin` | 443 / TCP | 🏠 Home network |
 | 🔒 **WireGuard** | `<PUBLIC_IP>:51820` | 51820 / UDP | 🌍 Internet, key only |
 | ☁️ **Nextcloud** | `https://nextcloud.home.arpa` | 443 / TCP | 🏠 Home network + 🔒 VPN |
-<br>
+
+`*.home.arpa` names come from Pi-hole. Every web page asks for its password. Nothing is reachable from the internet except WireGuard, and only with a valid key.
 
 <details>
 <summary><b>🔍 Under the hood</b></summary>
